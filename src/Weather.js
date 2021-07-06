@@ -6,14 +6,14 @@ export default function Weather() {
         <div className="Weather"> 
           <form>
             <div className="row">
-                <div className="col-6">
-                    <input type="search" placeholder="Enter a city..."  className="form-control" />
+                <div className="col-4">
+                    <input type="search" placeholder="Enter a city..." className="form-control" autoFocus="on"/>
                 </div>
                 <div className="col-3">
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary w-100">Search</button>
                 </div>
-                <div className="col-3">
-                    <button type="button" class="btn btn-success">Current Location</button>
+                <div className="col-5">
+                    <button type="button" class="btn btn-success w-100">Current Location</button>
                 </div>
             </div>
           </form>
@@ -26,10 +26,15 @@ export default function Weather() {
                   Sunny
               </li>
           </ul>
-          <div className="row">
+          <div className="row mt-3">
               <div className="col-6">
-                  <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" class="float-left" />
-                  6°C
+                  <div className="clearfix"> 
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" className="float-left" />
+                      <div className="float-left">
+                       <span className="temperature"> 6 </span>
+                       <span className="unit"> °C </span>
+                    </div>
+                  </div>
               </div>
               <div className="col-6">
                   <ul>
