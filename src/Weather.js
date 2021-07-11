@@ -5,7 +5,7 @@ import "./Weather.css";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ready: false});
-    const [city, setcity] = useState(props.defaultCity);
+    const [city, setCity] = useState(props.defaultCity);
 
     function handleResponse(response){
         setWeatherData({
@@ -14,18 +14,12 @@ export default function Weather(props) {
             humidity: response.data.main.humidity,
             date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
-            iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+            icon: response.data.weather[0].icon,
             wind: response.data.wind.speed,
             city: response.data.name
         });
 
     }
-
-        function search() {
-            const apiKey = "8eae015c5bbd359393dabf6e2f3a0e3e";
-            let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-            axios.get(apiUrl).then(handleResponse);
-        }
 
         function handleSubmit(event) {
             event.preventDefault();
@@ -33,7 +27,13 @@ export default function Weather(props) {
         }
     
         function handleCityChange(event) {
-            setcity(event.target.value);
+            setCity(event.target.value);
+        }
+
+        function search() {
+            const apiKey = "8eae015c5bbd359393dabf6e2f3a0e3e";
+            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            axios.get(apiUrl).then(handleResponse);
         }
     
     if (weatherData.ready) {
@@ -51,10 +51,10 @@ export default function Weather(props) {
                     />
                 </div>
                 <div className="col-3">
-                    <button type="submit" class="btn btn-primary w-100">Search</button>
+                    <button type="submit" className="btn btn-primary w-100">Search</button>
                 </div>
                 <div className="col-5">
-                    <button type="button" class="btn btn-success w-100">Current Location</button>
+                    <button type="button" className="btn btn-success w-100">Current Location</button>
                 </div>
             </div>
           </form>

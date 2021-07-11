@@ -3,7 +3,7 @@ import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props){
     return(
-        <div className="Weather">
+        <div className="WeatherInfo">
             <h1> {props.data.city} </h1>
             <ul>
               <li> <FormattedDate date={props.data.date} /> </li>
@@ -12,11 +12,11 @@ export default function WeatherInfo(props){
           <div className="row mt-3">
               <div className="col-6">
                   <div className="clearfix"> 
-                    <img src={props.data.iconUrl} alt={props.data.description} id="icon" className="float-left" />
+                    <img src={props.data.icon} alt={props.data.description} id="icon" className="float-left" />
                       
                        <span className="temperature"> {Math.round(props.data.temperature)} </span>
                        <span className="unit"> °C </span>
-                      
+
                    </div>
               </div>
               <div className="col-6">
