@@ -39,7 +39,6 @@ body{
     margin-left: 10px;
     line-height: 64px;
     font-weight: 400;
-    margin-left: 5px;
 }
 
 .Weather .unit{
@@ -48,35 +47,33 @@ body{
     font-weight: 400;
     position: relative;
     line-height: 1;
-    top: -34px;
-    
+    top: -34px;   
 }
 
 .Weather canvas{
     margin: 10px auto;
 }
 
-
 .Weather .btn-primary{
     background-color: #ff7171;
     border-color: #ff7171;
     padding: 9px;
-  }
+}
   
-  .Weather .btn-success{
+.Weather .btn-success{
     background-color: #9fd8df;
     border-color: #9fd8df;
     padding: 9px;
-  }
+}
 
 .Weather .btn-primary:hover{
     background-color: #f5c0c0;
     border-color: #f5c0c0;
-  }
+}
   
 .Weather .btn-success:hover{
     background-color: #f5c0c0;
     border-color: #f5c0c0;
     
-  }
+}
   
