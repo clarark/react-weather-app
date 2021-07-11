@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather defaultCity="New York" />
+        <Weather city="New York" />
       <footer>
         This project was coded by Clara Redshaw Kranich and is {""}
       <a href="https://github.com/clarark/react-weather-app" target="_blank" rel="noreferrer">
